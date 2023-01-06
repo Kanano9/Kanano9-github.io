@@ -1,23 +1,17 @@
 <?xml version="1.0"?>
-<rss version="2.0">
-    <channel>
-        <title>九奏Kanano</title>
-        <link>http://example.com</link>
-        <description></description>
-        <language>zh-CN</language>
-        <pubDate>Fri, 06 Jan 2023 00:00:00 +0800</pubDate>
-        <lastBuildDate>Fri, 06 Jan 2023 00:00:00 +0800</lastBuildDate>
-        <category>杂项</category>
-        <category>Godot</category>
-        <category>笔记</category>
-        <item>
-            <guid isPermalink="true">http://example.com/2023/01/06/%E3%80%90Godot%E3%80%911%E3%80%81%E8%AE%A4%E8%AF%86Godot/</guid>
-            <title>【Godot】1、认识Godot</title>
-            <link>http://example.com/2023/01/06/%E3%80%90Godot%E3%80%911%E3%80%81%E8%AE%A4%E8%AF%86Godot/</link>
-            <category>Godot</category>
-            <category>笔记</category>
-            <pubDate>Fri, 06 Jan 2023 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;🔵1-认识编辑器布局&#34;&gt;&lt;a href=&#34;#🔵1-认识编辑器布局&#34; class=&#34;headerlink&#34; title=&#34;🔵1.认识编辑器布局&#34;&gt;&lt;/a&gt;🔵1.认识编辑器布局&lt;/h1&gt;&lt;hr&gt;
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>九奏Kanano • Posts by &#34;笔记&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2023-01-05T16:00:00.000Z</updated>
+    <category term="杂项" />
+    <category term="Godot" />
+    <category term="笔记" />
+    <entry>
+        <id>http://example.com/2023/01/06/%E3%80%90Godot%E3%80%911%E3%80%81%E8%AE%A4%E8%AF%86Godot/</id>
+        <title>【Godot】1、认识Godot</title>
+        <link rel="alternate" href="http://example.com/2023/01/06/%E3%80%90Godot%E3%80%911%E3%80%81%E8%AE%A4%E8%AF%86Godot/"/>
+        <content type="html">&lt;h1 id=&#34;🔵1-认识编辑器布局&#34;&gt;&lt;a href=&#34;#🔵1-认识编辑器布局&#34; class=&#34;headerlink&#34; title=&#34;🔵1.认识编辑器布局&#34;&gt;&lt;/a&gt;🔵1.认识编辑器布局&lt;/h1&gt;&lt;hr&gt;
 &lt;p&gt;&lt;img src=&#34;https://pic.imgdb.cn/item/63b7a7d2be43e0d30ee99a54.jpg&#34; alt=&#34;Godot界面&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;🔷左侧边栏&#34;&gt;&lt;a href=&#34;#🔷左侧边栏&#34; class=&#34;headerlink&#34; title=&#34;🔷左侧边栏&#34;&gt;&lt;/a&gt;🔷左侧边栏&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;🔹&lt;strong&gt;文件系统&lt;/strong&gt;（FileSystem）：显示当前项目中所有资源文件&lt;/p&gt;
@@ -99,21 +93,9 @@
 &lt;li&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;G&lt;/kbd&gt; 使子节点不可选中&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2023/01/05/%E3%80%90%E6%9D%82%E3%80%91%E6%88%91%E4%B8%8E%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/</guid>
-            <title>【杂】我与博客的第一天</title>
-            <link>http://example.com/2023/01/05/%E3%80%90%E6%9D%82%E3%80%91%E6%88%91%E4%B8%8E%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/</link>
-            <category>杂项</category>
-            <pubDate>Thu, 05 Jan 2023 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;大家好呀，这里是九奏&lt;br&gt;
-今天是下定决心从新开始的第一天，同时我创立了这个博客&lt;br&gt;
-现在域名还是默认的 https://kanano9.github.io，本来想给孩子买个域名的，但是因为去年不断出现的 3 分钟热度，对象都不让买了，啊哈（尴尬）&lt;br&gt;
-我会在这里上传我今后的学习笔记，以及一些可能的报告书等等&lt;br&gt;
-真希望等明年这个时候，这篇博客会在几十页开外的位置上&lt;br&gt;
-明天见！&lt;/p&gt;
- ]]></description>
-        </item>
-    </channel>
-</rss>
+</content>
+        <category term="Godot" />
+        <category term="笔记" />
+        <updated>2023-01-05T16:00:00.000Z</updated>
+    </entry>
+</feed>

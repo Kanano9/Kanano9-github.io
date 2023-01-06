@@ -1,6 +1,6 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "九奏Kanano",
+    "title": "九奏Kanano • All posts by \"笔记\" tag",
     "description": "",
     "home_page_url": "http://example.com",
     "items": [
@@ -13,16 +13,6 @@
             "tags": [
                 "Godot",
                 "笔记"
-            ]
-        },
-        {
-            "id": "http://example.com/2023/01/05/%E3%80%90%E6%9D%82%E3%80%91%E6%88%91%E4%B8%8E%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/",
-            "url": "http://example.com/2023/01/05/%E3%80%90%E6%9D%82%E3%80%91%E6%88%91%E4%B8%8E%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/",
-            "title": "【杂】我与博客的第一天",
-            "date_published": "2023-01-04T16:00:00.000Z",
-            "content_html": "<p>大家好呀，这里是九奏<br>\n今天是下定决心从新开始的第一天，同时我创立了这个博客<br>\n现在域名还是默认的 https://kanano9.github.io，本来想给孩子买个域名的，但是因为去年不断出现的 3 分钟热度，对象都不让买了，啊哈（尴尬）<br>\n我会在这里上传我今后的学习笔记，以及一些可能的报告书等等<br>\n真希望等明年这个时候，这篇博客会在几十页开外的位置上<br>\n明天见！</p>\n",
-            "tags": [
-                "杂项"
             ]
         }
     ]

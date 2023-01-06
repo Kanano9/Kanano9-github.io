@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <rss version="2.0">
     <channel>
-        <title>九奏Kanano</title>
+        <title>九奏Kanano • Posts by &#34;笔记&#34; tag</title>
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
@@ -99,20 +99,6 @@
 &lt;li&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;G&lt;/kbd&gt; 使子节点不可选中&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2023/01/05/%E3%80%90%E6%9D%82%E3%80%91%E6%88%91%E4%B8%8E%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/</guid>
-            <title>【杂】我与博客的第一天</title>
-            <link>http://example.com/2023/01/05/%E3%80%90%E6%9D%82%E3%80%91%E6%88%91%E4%B8%8E%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/</link>
-            <category>杂项</category>
-            <pubDate>Thu, 05 Jan 2023 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;大家好呀，这里是九奏&lt;br&gt;
-今天是下定决心从新开始的第一天，同时我创立了这个博客&lt;br&gt;
-现在域名还是默认的 https://kanano9.github.io，本来想给孩子买个域名的，但是因为去年不断出现的 3 分钟热度，对象都不让买了，啊哈（尴尬）&lt;br&gt;
-我会在这里上传我今后的学习笔记，以及一些可能的报告书等等&lt;br&gt;
-真希望等明年这个时候，这篇博客会在几十页开外的位置上&lt;br&gt;
-明天见！&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
