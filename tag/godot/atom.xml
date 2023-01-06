@@ -67,6 +67,7 @@
 &lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;需要注意的是，全局位置是以场景左上角为原点，而非根节点&lt;/p&gt;
 &lt;/div&gt;
 &lt;h1 id=&#34;3节点的基础操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3节点的基础操作&#34;&gt;#&lt;/a&gt; 🔵3. 节点的基础操作&lt;/h1&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;kbdqkbd-选择工具&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#kbdqkbd-选择工具&#34;&gt;#&lt;/a&gt; 🔷&lt;kbd&gt;Q&lt;/kbd&gt; 选择工具&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;
@@ -102,6 +103,72 @@
 &lt;li&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;L&lt;/kbd&gt; 锁定节点&lt;/li&gt;
 &lt;li&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;G&lt;/kbd&gt; 使子节点不可选中&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="Godot" />
+        <category term="笔记" />
+        <updated>2023-01-05T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2023/01/06/%E3%80%90Godot%E3%80%91%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%A4%87%E5%BF%98/</id>
+        <title>【Godot】一些小技巧的备忘</title>
+        <link rel="alternate" href="http://example.com/2023/01/06/%E3%80%90Godot%E3%80%91%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%A4%87%E5%BF%98/"/>
+        <content type="html">&lt;h2 id=&#34;1图片的切割与合并&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1图片的切割与合并&#34;&gt;#&lt;/a&gt; 🔵1. 图片的切割与合并&lt;/h2&gt;
+&lt;h3 id=&#34;切割&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#切割&#34;&gt;#&lt;/a&gt; 🔷切割&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;选中需要切割的图片，进入属性栏，勾选 Region-Enabled&lt;/li&gt;
+&lt;li&gt;在底部面板选中 TextureRegion，Snap Mode 选择 Auto Slice，选出需要的区域&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;合并&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#合并&#34;&gt;#&lt;/a&gt; 🔷合并&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;在文件系统面板选中需要合并的图片&lt;/li&gt;
+&lt;li&gt;进入导入面板，设置为 Import as TextureAtlas，再勾选 Atlas File&lt;/li&gt;
+&lt;li&gt;Reimport 后即可使用新素材&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="Godot" />
+        <category term="笔记" />
+        <updated>2023-01-05T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2023/01/06/%E3%80%90Godot%E3%80%912%E3%80%81%E8%8A%82%E7%82%B9/</id>
+        <title>【Godot】2、节点</title>
+        <link rel="alternate" href="http://example.com/2023/01/06/%E3%80%90Godot%E3%80%912%E3%80%81%E8%8A%82%E7%82%B9/"/>
+        <content type="html">&lt;h1 id=&#34;什么是节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#什么是节点&#34;&gt;#&lt;/a&gt; 🔵什么是节点&lt;/h1&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔷节点用于实现各种功能，例：Sprite 用于显示图片&lt;/p&gt;
+&lt;p&gt;🔷一个子节点的功能可以继承给它的父节点&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;node节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#node节点&#34;&gt;#&lt;/a&gt; 🔵Node 节点&lt;/h1&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔷Node 节点是所有节点的根基，Godot 所有节点都继承自 Node 节点，它们都拥有 Node 节点的功能&lt;/p&gt;
+&lt;p&gt;🔷Node 节点通常用于挂载脚本&lt;/p&gt;
+&lt;p&gt;🔷&lt;strong&gt;Script&lt;/strong&gt;：用于挂脚本&lt;/p&gt;
+&lt;p&gt;🔷&lt;strong&gt;Mode&lt;/strong&gt;：当游戏暂停时的执行状态&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Inherit（继承）：继承父节点的处理方法&lt;/li&gt;
+&lt;li&gt;Stop（停止）：暂停时该节点停止处理&lt;/li&gt;
+&lt;li&gt;Process（处理）：暂停时继续处理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;🔷&lt;strong&gt;Priority&lt;/strong&gt;：优先级，数字越低优先度越高&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;canvasltem&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#canvasltem&#34;&gt;#&lt;/a&gt; 🔵Canvasltem&lt;/h1&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔷Canvasltem 是直接继承自 Node 的一个节点，所有 2D 和 GUI 节点都继承于它&lt;/p&gt;
+&lt;p&gt;🔷Canvasltem 可以被绘制节点，可以设置可视化界面和材质的颜色&lt;/p&gt;
+&lt;p&gt;🔷通过设置 Show Behind Parent 可以改变最终渲染到屏幕上的画面顺序&lt;/p&gt;
+&lt;p&gt;🔷&lt;strong&gt;Texture&lt;/strong&gt;：贴图，附加到附体表面的贴图&lt;/p&gt;
+&lt;p&gt;🔷&lt;strong&gt;Material&lt;/strong&gt;：材质，实际上就是 shade&lt;/p&gt;
+&lt;p&gt;🔷&lt;strong&gt;Shader&lt;/strong&gt;：着色器，使用代码来渲染图形&lt;/p&gt;
 &lt;/blockquote&gt;
 </content>
         <category term="Godot" />
