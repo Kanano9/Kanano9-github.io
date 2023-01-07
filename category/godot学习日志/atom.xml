@@ -3,102 +3,346 @@
     <id>http://example.com</id>
     <title>九奏Kanano • Posts by &#34;godot学习日志&#34; category</title>
     <link href="http://example.com" />
-    <updated>2023-01-05T16:00:00.000Z</updated>
+    <updated>2023-01-07T04:00:00.000Z</updated>
     <category term="杂项" />
     <category term="Godot" />
     <category term="笔记" />
     <entry>
+        <id>http://example.com/2023/01/07/%E3%80%90Godot%E3%80%913%E3%80%81%E8%84%9A%E6%9C%AC/</id>
+        <title>【Godot】3、脚本</title>
+        <link rel="alternate" href="http://example.com/2023/01/07/%E3%80%90Godot%E3%80%913%E3%80%81%E8%84%9A%E6%9C%AC/"/>
+        <content type="html">&lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;文章会持续更新，最近更新时间为：2023/01/07&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;gds的数据类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#gds的数据类型&#34;&gt;#&lt;/a&gt; 🔵GDS 的数据类型&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔷&lt;strong&gt;bool&lt;/strong&gt;：布尔值，默认为 false&lt;/p&gt;
+&lt;p&gt;🔷&lt;strong&gt;int&lt;/strong&gt;：整数，范围为：-2&lt;sup&gt;64&lt;/sup&gt; ~ 2&lt;sup&gt;64&lt;/sup&gt;-1 默认为 0&lt;/p&gt;
+&lt;p&gt;🔷&lt;strong&gt;float&lt;/strong&gt;：浮点，默认为 0&lt;/p&gt;
+&lt;p&gt;🔷&lt;strong&gt;String&lt;/strong&gt;：字符串，默认为 Null&lt;/p&gt;
+&lt;p&gt;🔷&lt;strong&gt;数组&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;🔷&lt;strong&gt;对象&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;🔷&lt;strong&gt;null&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;变量相关&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量相关&#34;&gt;#&lt;/a&gt; 🔵变量相关&lt;/h1&gt;
+&lt;h2 id=&#34;运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#运算符&#34;&gt;#&lt;/a&gt; 🔷运算符&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹算数运算符&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;运算符&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;th&gt;结果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;+&lt;/td&gt;
+&lt;td&gt;加法&lt;/td&gt;
+&lt;td&gt;x=1+1&lt;/td&gt;
+&lt;td&gt;x=2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;减法&lt;/td&gt;
+&lt;td&gt;x=1-1&lt;/td&gt;
+&lt;td&gt;x=0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;乘法&lt;/td&gt;
+&lt;td&gt;x=2*2&lt;/td&gt;
+&lt;td&gt;x=4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/&lt;/td&gt;
+&lt;td&gt;除法&lt;/td&gt;
+&lt;td&gt;x=4/2&lt;/td&gt;
+&lt;td&gt;x=2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%&lt;/td&gt;
+&lt;td&gt;取余数&lt;/td&gt;
+&lt;td&gt;x=5%2&lt;/td&gt;
+&lt;td&gt;x=1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;🔹赋值运算符&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;运算符&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;th&gt;结果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;=&lt;/td&gt;
+&lt;td&gt;直接赋值&lt;/td&gt;
+&lt;td&gt;x=1&lt;/td&gt;
+&lt;td&gt;x=1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;+=&lt;/td&gt;
+&lt;td&gt;x=x+&lt;/td&gt;
+&lt;td&gt;x+=1&lt;/td&gt;
+&lt;td&gt;x=2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-=&lt;/td&gt;
+&lt;td&gt;x=x-&lt;/td&gt;
+&lt;td&gt;x-=1&lt;/td&gt;
+&lt;td&gt;x=0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/=&lt;/td&gt;
+&lt;td&gt;x=x/&lt;/td&gt;
+&lt;td&gt;x/=1&lt;/td&gt;
+&lt;td&gt;x=1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%=&lt;/td&gt;
+&lt;td&gt;x=x%&lt;/td&gt;
+&lt;td&gt;x%=1&lt;/td&gt;
+&lt;td&gt;x=0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;🔹比较运算符&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;运算符&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;th&gt;结果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;==&lt;/td&gt;
+&lt;td&gt;等于&lt;/td&gt;
+&lt;td&gt;x==1&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;!=&lt;/td&gt;
+&lt;td&gt;不等于&lt;/td&gt;
+&lt;td&gt;x!=0&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;gt;&lt;/td&gt;
+&lt;td&gt;大于&lt;/td&gt;
+&lt;td&gt;x&amp;gt;1&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;lt;&lt;/td&gt;
+&lt;td&gt;小于&lt;/td&gt;
+&lt;td&gt;x&amp;lt;2&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;gt;=&lt;/td&gt;
+&lt;td&gt;大于等于&lt;/td&gt;
+&lt;td&gt;x&amp;gt;=1&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;lt;=&lt;/td&gt;
+&lt;td&gt;小于等于&lt;/td&gt;
+&lt;td&gt;x&amp;lt;=2&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;变量的导出可以做个视频&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量的导出可以做个视频&#34;&gt;#&lt;/a&gt; 🔷变量的导出（可以做个视频）&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹将变量导出， 可以让我们直接在编辑器外部更改变量而不用编辑脚本&lt;/p&gt;
+&lt;p&gt;🔹导出变量的语法为：（4.0 语法）&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;@export var 变量名:变量类型&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;🔹导出的变量类型：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;变量类型&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;字符串&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;NodePath&lt;/td&gt;
+&lt;td&gt;节点路径&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Resource&lt;/td&gt;
+&lt;td&gt;资源文件路径&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Colur&lt;/td&gt;
+&lt;td&gt;颜色&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;# 导出一个数字&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@export var a = 1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 导出一个字符串&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@export var b:String&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 导出一个节点路径&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@export var c:NodePath&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 导出一个txt文件路径&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@export_global_file(&amp;quot;*.txt&amp;quot;) var d: String&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 导出一个资源文件路径&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@export var e:Resource&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="Godot" />
+        <category term="笔记" />
+        <updated>2023-01-07T04:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2023/01/06/%E3%80%90Godot%E3%80%912%E3%80%81%E8%8A%82%E7%82%B9/</id>
+        <title>【Godot】2、节点</title>
+        <link rel="alternate" href="http://example.com/2023/01/06/%E3%80%90Godot%E3%80%912%E3%80%81%E8%8A%82%E7%82%B9/"/>
+        <content type="html">&lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;文章会持续更新，最近更新时间为：2023/01/07&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;什么是节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#什么是节点&#34;&gt;#&lt;/a&gt; 🔵什么是节点&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹节点用于实现各种功能，例：Sprite 用于显示图片&lt;/p&gt;
+&lt;p&gt;🔹一个子节点的功能可以继承给它的父节点&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;节点详解&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#节点详解&#34;&gt;#&lt;/a&gt; 🔵节点详解&lt;/h1&gt;
+&lt;h2 id=&#34;node节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#node节点&#34;&gt;#&lt;/a&gt; 🔷Node 节点&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹Node 节点是所有节点的根基，Godot 所有节点都继承自 Node 节点，它们都拥有 Node 节点的功能&lt;/p&gt;
+&lt;p&gt;🔹Node 节点通常用于挂载脚本&lt;/p&gt;
+&lt;p&gt;🔹&lt;strong&gt;Script&lt;/strong&gt;：用于挂脚本&lt;/p&gt;
+&lt;p&gt;🔹&lt;strong&gt;Mode&lt;/strong&gt;：当游戏暂停时的执行状态&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Inherit（继承）：继承父节点的处理方法&lt;/li&gt;
+&lt;li&gt;Stop（停止）：暂停时该节点停止处理&lt;/li&gt;
+&lt;li&gt;Process（处理）：暂停时继续处理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;🔹&lt;strong&gt;Priority&lt;/strong&gt;：优先级，数字越低优先度越高&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;canvasltem&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#canvasltem&#34;&gt;#&lt;/a&gt; 🔷Canvasltem&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹Canvasltem 是直接继承自 Node 的一个节点，所有 2D 和 GUI 节点都继承于它&lt;/p&gt;
+&lt;p&gt;🔹Canvasltem 可以被绘制节点，可以设置可视化界面和材质的颜色&lt;/p&gt;
+&lt;p&gt;🔹通过设置 Show Behind Parent 可以改变最终渲染到屏幕上的画面顺序&lt;/p&gt;
+&lt;p&gt;🔹&lt;strong&gt;Texture&lt;/strong&gt;：贴图，附加到附体表面的贴图&lt;/p&gt;
+&lt;p&gt;🔹&lt;strong&gt;Material&lt;/strong&gt;：材质，实际上就是 shade&lt;/p&gt;
+&lt;p&gt;🔹&lt;strong&gt;Shader&lt;/strong&gt;：着色器，使用代码来渲染图形&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;node2d&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#node2d&#34;&gt;#&lt;/a&gt; 🔷Node2D&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹Node2D 继承自 CanvasItem，因此在 Node2D 的检查器面板里可以看到 CanvasItem 及 Node 的设置项，以及 Node2D 自身的设置项&lt;/p&gt;
+&lt;p&gt;🔹&lt;strong&gt;Transform&lt;/strong&gt;：Node2D 节点的基本属性，在脚本编程中非常常用，它表示：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Position&lt;/strong&gt;：位置&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rotation&lt;/strong&gt;：旋转&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scale&lt;/strong&gt;：缩放&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔹&lt;strong&gt;Ordering&lt;/strong&gt; 下的&lt;strong&gt; Z Index&lt;/strong&gt;：相当于 3 维空间的 Z 轴便宜，也可以理解为数值越大渲染顺序越靠后&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;自定义节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#自定义节点&#34;&gt;#&lt;/a&gt; 🔷自定义节点&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹当现有节点无法满足需要时有两种解决方法：自定义节点、自定义脚本，但&lt;mark&gt;不管是哪种方法，核心都是脚本&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;🔹要自定义节点，先创建一个脚本，输入：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;extends 要继承的父节点&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Class_name 节点名字 &amp;quot;节点图标路径&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;#自定义节点的属性面板内容&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;export var……&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;#在4.0后应改为&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@export var……&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="Godot" />
+        <category term="笔记" />
+        <updated>2023-01-06T12:00:00.000Z</updated>
+    </entry>
+    <entry>
         <id>http://example.com/2023/01/06/%E3%80%90Godot%E3%80%911%E3%80%81%E8%AE%A4%E8%AF%86Godot/</id>
         <title>【Godot】1、认识Godot</title>
         <link rel="alternate" href="http://example.com/2023/01/06/%E3%80%90Godot%E3%80%911%E3%80%81%E8%AE%A4%E8%AF%86Godot/"/>
-        <content type="html">&lt;h1 id=&#34;1认识编辑器布局&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1认识编辑器布局&#34;&gt;#&lt;/a&gt; 🔵1. 认识编辑器布局&lt;/h1&gt;
-&lt;hr&gt;
+        <content type="html">&lt;h1 id=&#34;🔵1-认识编辑器布局&#34;&gt;&lt;a href=&#34;#🔵1-认识编辑器布局&#34; class=&#34;headerlink&#34; title=&#34;🔵1.认识编辑器布局&#34;&gt;&lt;/a&gt;🔵1.认识编辑器布局&lt;/h1&gt;&lt;hr&gt;
 &lt;p&gt;&lt;img src=&#34;https://pic.imgdb.cn/item/63b7a7d2be43e0d30ee99a54.jpg&#34; alt=&#34;Godot界面&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;左侧边栏&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#左侧边栏&#34;&gt;#&lt;/a&gt; 🔷左侧边栏&lt;/h2&gt;
-&lt;blockquote&gt;
+&lt;h2 id=&#34;🔷左侧边栏&#34;&gt;&lt;a href=&#34;#🔷左侧边栏&#34; class=&#34;headerlink&#34; title=&#34;🔷左侧边栏&#34;&gt;&lt;/a&gt;🔷左侧边栏&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;🔹&lt;strong&gt;文件系统&lt;/strong&gt;（FileSystem）：显示当前项目中所有资源文件&lt;/p&gt;
-&lt;p&gt;🔹&lt;strong&gt;导入&lt;/strong&gt;（Import）：显示文件&lt;mark&gt;系统分栏中所选资源文件&lt;/mark&gt;的导入设置&lt;/p&gt;
-&lt;p&gt;🔹&lt;strong&gt;场景&lt;/strong&gt;（Scene）：按照层级结构显示当前场景中所有节点，可以简单理解为一个游戏里的场景 / 关卡&lt;/p&gt;
+&lt;p&gt;🔹&lt;strong&gt;导入&lt;/strong&gt;（Import）：显示文件&amp;#x3D;&amp;#x3D;系统分栏中所选资源文件&amp;#x3D;&amp;#x3D;的导入设置&lt;/p&gt;
+&lt;p&gt;🔹&lt;strong&gt;场景&lt;/strong&gt;（Scene）：按照层级结构显示当前场景中所有节点，可以简单理解为一个游戏里的场景&amp;#x2F;关卡&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;右侧分栏&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#右侧分栏&#34;&gt;#&lt;/a&gt; 🔷右侧分栏&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;🔹&lt;strong&gt;属性&lt;/strong&gt;（Inspector）：显示&lt;mark&gt;场景分栏中所选节点&lt;/mark&gt;的属性&lt;/p&gt;
-&lt;p&gt;🔹&lt;strong&gt;节点&lt;/strong&gt;（Node）：显示与&lt;mark&gt;场景分栏中所选节点&lt;/mark&gt;对应的一些信息&lt;/p&gt;
+&lt;h2 id=&#34;🔷右侧分栏&#34;&gt;&lt;a href=&#34;#🔷右侧分栏&#34; class=&#34;headerlink&#34; title=&#34;🔷右侧分栏&#34;&gt;&lt;/a&gt;🔷右侧分栏&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;🔹&lt;strong&gt;检查器&lt;/strong&gt;（Inspector）：显示&amp;#x3D;&amp;#x3D;场景分栏中所选节点&amp;#x3D;&amp;#x3D;的属性&lt;/p&gt;
+&lt;p&gt;🔹&lt;strong&gt;节点&lt;/strong&gt;（Node）：显示与&amp;#x3D;&amp;#x3D;场景分栏中所选节点&amp;#x3D;&amp;#x3D;对应的一些信息&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;中间面板&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#中间面板&#34;&gt;#&lt;/a&gt; 🔷中间面板&lt;/h2&gt;
-&lt;blockquote&gt;
+&lt;h2 id=&#34;🔷中间面板&#34;&gt;&lt;a href=&#34;#🔷中间面板&#34; class=&#34;headerlink&#34; title=&#34;🔷中间面板&#34;&gt;&lt;/a&gt;🔷中间面板&lt;/h2&gt;&lt;blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;2D：编辑 2D 场景的窗口&lt;/li&gt;
-&lt;li&gt;3D：相对的用于编辑 3D 场景&lt;/li&gt;
-&lt;li&gt;脚本（Script）：Godot 内置的脚本编辑器，可以使用外置 IDE 替代&lt;/li&gt;
+&lt;li&gt;2D：编辑2D场景的窗口&lt;/li&gt;
+&lt;li&gt;3D：相对的用于编辑3D场景&lt;/li&gt;
+&lt;li&gt;脚本（Script）：Godot内置的脚本编辑器，可以使用外置IDE替代&lt;/li&gt;
 &lt;li&gt;资源库（AsseLib）：可以浏览搜索网络上的资源&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;底部面板&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#底部面板&#34;&gt;#&lt;/a&gt; 🔷底部面板&lt;/h2&gt;
-&lt;blockquote&gt;
+&lt;h2 id=&#34;🔷底部面板&#34;&gt;&lt;a href=&#34;#🔷底部面板&#34; class=&#34;headerlink&#34; title=&#34;🔷底部面板&#34;&gt;&lt;/a&gt;🔷底部面板&lt;/h2&gt;&lt;blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;调试控制台&lt;/li&gt;
 &lt;li&gt;动画编辑器&lt;/li&gt;
 &lt;li&gt;混音器&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&#34;2认识游戏对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2认识游戏对象&#34;&gt;#&lt;/a&gt; 🔵2. 认识游戏对象&lt;/h1&gt;
-&lt;hr&gt;
-&lt;p&gt;🔷&lt;strong&gt;游戏对象&lt;/strong&gt;（Node）：即是场景里包含的一切内容，Godot 的一切操作都是基于 Node 实现&lt;/p&gt;
+&lt;h1 id=&#34;🔵2-认识游戏对象&#34;&gt;&lt;a href=&#34;#🔵2-认识游戏对象&#34; class=&#34;headerlink&#34; title=&#34;🔵2.认识游戏对象&#34;&gt;&lt;/a&gt;🔵2.认识游戏对象&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;🔷&lt;strong&gt;游戏对象&lt;/strong&gt;（Node）：即是场景里包含的一切内容，Godot的一切操作都是基于Node实现&lt;/p&gt;
 &lt;p&gt;🔷所有节点都拥有以下特性&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;可变更的名称&lt;/li&gt;
 &lt;li&gt;可编辑的属性&lt;/li&gt;
 &lt;li&gt;每帧都可以接受回调进行更新&lt;/li&gt;
-&lt;li&gt;使用新的属性 / 函数进行扩展&lt;/li&gt;
+&lt;li&gt;使用新的属性&amp;#x2F;函数进行扩展&lt;/li&gt;
 &lt;li&gt;可添加为其他节点的子节点&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;节点会组成一棵树，不同节点拥有不同可能，组合在一起就可以产生复杂的行为&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;🔷在 Godot 中所有节点的坐标都是&lt;mark&gt;相对坐标&lt;/mark&gt;，相对坐标和全局坐标都可以相互转化，如果想直接调节全局坐标，可以调节 global_postion&lt;/p&gt;
+
+&lt;p&gt;🔷在Godot中所有节点的坐标都是&amp;#x3D;&amp;#x3D;相对坐标&amp;#x3D;&amp;#x3D;，相对坐标和全局坐标都可以相互转化，如果想直接调节全局坐标，可以调节global_postion&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;当子节点坐标为（0,0）时，和父节点相对距离为 0，两节点重合&lt;img src=&#34;https://pic.imgdb.cn/item/63b7c260be43e0d30e2c7a79.jpg&#34; alt=&#34;子节点坐标为（0,0）&#34;&gt;&lt;/li&gt;
-&lt;li&gt;当子节点坐标为（100,100）时，子节点便会和父节点错开，此时的子节点世界坐标为 (100+100=200,100+100=200)&lt;img src=&#34;https://pic.imgdb.cn/item/63b7c3a0be43e0d30e2f1e20.jpg&#34; alt=&#34;子节点坐标为（100,100）&#34;&gt;&lt;/li&gt;
+&lt;li&gt;当子节点坐标为（0,0）时，和父节点相对距离为0，两节点重合&lt;img src=&#34;https://pic.imgdb.cn/item/63b7c260be43e0d30e2c7a79.jpg&#34; alt=&#34;子节点坐标为（0,0）&#34;&gt;&lt;/li&gt;
+&lt;li&gt;当子节点坐标为（100,100）时，子节点便会和父节点错开，此时的子节点世界坐标为(100+100&amp;#x3D;200,100+100&amp;#x3D;200)&lt;img src=&#34;https://pic.imgdb.cn/item/63b7c3a0be43e0d30e2f1e20.jpg&#34; alt=&#34;子节点坐标为（100,100）&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;需要注意的是，全局位置是以场景左上角为原点，而非根节点&lt;/p&gt;
 &lt;/div&gt;
-&lt;h1 id=&#34;3节点的基础操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3节点的基础操作&#34;&gt;#&lt;/a&gt; 🔵3. 节点的基础操作&lt;/h1&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;kbdqkbd-选择工具&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#kbdqkbd-选择工具&#34;&gt;#&lt;/a&gt; 🔷&lt;kbd&gt;Q&lt;/kbd&gt; 选择工具&lt;/h2&gt;
-&lt;blockquote&gt;
+
+&lt;h1 id=&#34;🔵3-节点的基础操作&#34;&gt;&lt;a href=&#34;#🔵3-节点的基础操作&#34; class=&#34;headerlink&#34; title=&#34;🔵3.节点的基础操作&#34;&gt;&lt;/a&gt;🔵3.节点的基础操作&lt;/h1&gt;&lt;hr&gt;
+&lt;h2 id=&#34;🔷Q-选择工具&#34;&gt;&lt;a href=&#34;#🔷Q-选择工具&#34; class=&#34;headerlink&#34; title=&#34;🔷Q 选择工具&#34;&gt;&lt;/a&gt;🔷&lt;kbd&gt;Q&lt;/kbd&gt; 选择工具&lt;/h2&gt;&lt;blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;按住&lt;kbd&gt;Alt&lt;/kbd&gt;拖拽缩放点，保持选中目标中心不变进行缩放&lt;/li&gt;
 &lt;li&gt;按住&lt;kbd&gt;Shift&lt;/kbd&gt;等比缩放&lt;/li&gt;
 &lt;li&gt;按住&lt;kbd&gt;Ctrl&lt;/kbd&gt;可以进行旋转&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;kbdwkbd-移动工具&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#kbdwkbd-移动工具&#34;&gt;#&lt;/a&gt; 🔷&lt;kbd&gt;W&lt;/kbd&gt; 移动工具&lt;/h2&gt;
-&lt;h2 id=&#34;kbdrkbd-移动工具&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#kbdrkbd-移动工具&#34;&gt;#&lt;/a&gt; 🔷&lt;kbd&gt;R&lt;/kbd&gt; 移动工具&lt;/h2&gt;
-&lt;blockquote&gt;
+&lt;h2 id=&#34;🔷W-移动工具&#34;&gt;&lt;a href=&#34;#🔷W-移动工具&#34; class=&#34;headerlink&#34; title=&#34;🔷W 移动工具&#34;&gt;&lt;/a&gt;🔷&lt;kbd&gt;W&lt;/kbd&gt; 移动工具&lt;/h2&gt;&lt;h2 id=&#34;🔷R-移动工具&#34;&gt;&lt;a href=&#34;#🔷R-移动工具&#34; class=&#34;headerlink&#34; title=&#34;🔷R 移动工具&#34;&gt;&lt;/a&gt;🔷&lt;kbd&gt;R&lt;/kbd&gt; 移动工具&lt;/h2&gt;&lt;blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;kbd&gt;V&lt;/kbd&gt; 移动轴心点；&lt;kbd&gt;Shift&lt;/kbd&gt;+&lt;kbd&gt;V&lt;/kbd&gt;拖拽轴心点&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;kbdskbd-缩放工具&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#kbdskbd-缩放工具&#34;&gt;#&lt;/a&gt; 🔷&lt;kbd&gt;S&lt;/kbd&gt; 缩放工具&lt;/h2&gt;
-&lt;h2 id=&#34;kbdfkbd-聚焦选取对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#kbdfkbd-聚焦选取对象&#34;&gt;#&lt;/a&gt; 🔷&lt;kbd&gt;F&lt;/kbd&gt; 聚焦选取对象&lt;/h2&gt;
-&lt;h2 id=&#34;多节点选择工具&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#多节点选择工具&#34;&gt;#&lt;/a&gt; 🔷多节点选择工具&lt;/h2&gt;
-&lt;blockquote&gt;
+&lt;h2 id=&#34;🔷S-缩放工具&#34;&gt;&lt;a href=&#34;#🔷S-缩放工具&#34; class=&#34;headerlink&#34; title=&#34;🔷S 缩放工具&#34;&gt;&lt;/a&gt;🔷&lt;kbd&gt;S&lt;/kbd&gt; 缩放工具&lt;/h2&gt;&lt;h2 id=&#34;🔷F-聚焦选取对象&#34;&gt;&lt;a href=&#34;#🔷F-聚焦选取对象&#34; class=&#34;headerlink&#34; title=&#34;🔷F 聚焦选取对象&#34;&gt;&lt;/a&gt;🔷&lt;kbd&gt;F&lt;/kbd&gt; 聚焦选取对象&lt;/h2&gt;&lt;h2 id=&#34;🔷多节点选择工具&#34;&gt;&lt;a href=&#34;#🔷多节点选择工具&#34; class=&#34;headerlink&#34; title=&#34;🔷多节点选择工具&#34;&gt;&lt;/a&gt;🔷多节点选择工具&lt;/h2&gt;&lt;blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;当节点间重叠时，可以使用该工具精确选定需要的节点&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;吸附-锁定节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#吸附-锁定节点&#34;&gt;#&lt;/a&gt; 🔷吸附 &amp;amp; 锁定节点&lt;/h2&gt;
-&lt;blockquote&gt;
+&lt;h2 id=&#34;🔷吸附-amp-锁定节点&#34;&gt;&lt;a href=&#34;#🔷吸附-amp-锁定节点&#34; class=&#34;headerlink&#34; title=&#34;🔷吸附 &amp;amp; 锁定节点&#34;&gt;&lt;/a&gt;🔷吸附 &amp;amp; 锁定节点&lt;/h2&gt;&lt;blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;kbd&gt;Shift&lt;/kbd&gt;+&lt;kbd&gt;S&lt;/kbd&gt; 打开智能吸附&lt;/li&gt;
 &lt;li&gt;&lt;kbd&gt;Shift&lt;/kbd&gt;+&lt;kbd&gt;G&lt;/kbd&gt; 打开网格吸附&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;在 Godot 中对齐都是以轴心点为基准&lt;/p&gt;
+&lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;在Godot中对齐都是以轴心点为基准&lt;/p&gt;
 &lt;/div&gt;
+
 &lt;ul&gt;
 &lt;li&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;L&lt;/kbd&gt; 锁定节点&lt;/li&gt;
 &lt;li&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;G&lt;/kbd&gt; 使子节点不可选中&lt;/li&gt;
@@ -107,47 +351,6 @@
 </content>
         <category term="Godot" />
         <category term="笔记" />
-        <updated>2023-01-05T16:00:00.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2023/01/06/%E3%80%90Godot%E3%80%912%E3%80%81%E8%8A%82%E7%82%B9/</id>
-        <title>【Godot】2、节点</title>
-        <link rel="alternate" href="http://example.com/2023/01/06/%E3%80%90Godot%E3%80%912%E3%80%81%E8%8A%82%E7%82%B9/"/>
-        <content type="html">&lt;h1 id=&#34;什么是节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#什么是节点&#34;&gt;#&lt;/a&gt; 🔵什么是节点&lt;/h1&gt;
-&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;p&gt;🔷节点用于实现各种功能，例：Sprite 用于显示图片&lt;/p&gt;
-&lt;p&gt;🔷一个子节点的功能可以继承给它的父节点&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;node节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#node节点&#34;&gt;#&lt;/a&gt; 🔵Node 节点&lt;/h1&gt;
-&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;p&gt;🔷Node 节点是所有节点的根基，Godot 所有节点都继承自 Node 节点，它们都拥有 Node 节点的功能&lt;/p&gt;
-&lt;p&gt;🔷Node 节点通常用于挂载脚本&lt;/p&gt;
-&lt;p&gt;🔷&lt;strong&gt;Script&lt;/strong&gt;：用于挂脚本&lt;/p&gt;
-&lt;p&gt;🔷&lt;strong&gt;Mode&lt;/strong&gt;：当游戏暂停时的执行状态&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;Inherit（继承）：继承父节点的处理方法&lt;/li&gt;
-&lt;li&gt;Stop（停止）：暂停时该节点停止处理&lt;/li&gt;
-&lt;li&gt;Process（处理）：暂停时继续处理&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;🔷&lt;strong&gt;Priority&lt;/strong&gt;：优先级，数字越低优先度越高&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;canvasltem&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#canvasltem&#34;&gt;#&lt;/a&gt; 🔵Canvasltem&lt;/h1&gt;
-&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;p&gt;🔷Canvasltem 是直接继承自 Node 的一个节点，所有 2D 和 GUI 节点都继承于它&lt;/p&gt;
-&lt;p&gt;🔷Canvasltem 可以被绘制节点，可以设置可视化界面和材质的颜色&lt;/p&gt;
-&lt;p&gt;🔷通过设置 Show Behind Parent 可以改变最终渲染到屏幕上的画面顺序&lt;/p&gt;
-&lt;p&gt;🔷&lt;strong&gt;Texture&lt;/strong&gt;：贴图，附加到附体表面的贴图&lt;/p&gt;
-&lt;p&gt;🔷&lt;strong&gt;Material&lt;/strong&gt;：材质，实际上就是 shade&lt;/p&gt;
-&lt;p&gt;🔷&lt;strong&gt;Shader&lt;/strong&gt;：着色器，使用代码来渲染图形&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
-        <category term="Godot" />
-        <category term="笔记" />
-        <updated>2023-01-05T16:00:00.000Z</updated>
+        <updated>2023-01-06T04:00:00.000Z</updated>
     </entry>
 </feed>
