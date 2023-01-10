@@ -19,9 +19,9 @@
 &lt;p&gt;🔷&lt;strong&gt;int&lt;/strong&gt;：整数，范围为：-2&lt;sup&gt;64&lt;/sup&gt; ~ 2&lt;sup&gt;64&lt;/sup&gt;-1 默认为 0&lt;/p&gt;
 &lt;p&gt;🔷&lt;strong&gt;float&lt;/strong&gt;：浮点，默认为 0&lt;/p&gt;
 &lt;p&gt;🔷&lt;strong&gt;String&lt;/strong&gt;：字符串，默认为 Null&lt;/p&gt;
-&lt;p&gt;🔷&lt;strong&gt;数组&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;🔷&lt;strong&gt;对象&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;🔷&lt;strong&gt;null&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;🔷&lt;strong&gt;Array&lt;/strong&gt;：数组&lt;/p&gt;
+&lt;p&gt;🔷&lt;strong&gt;Object&lt;/strong&gt;：对象&lt;/p&gt;
+&lt;p&gt;🔷&lt;strong&gt;null&lt;/strong&gt;：无，空&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h1 id=&#34;变量相关&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量相关&#34;&gt;#&lt;/a&gt; 🔵变量相关&lt;/h1&gt;
@@ -222,7 +222,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;# 导出一个数字&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@export var a = 1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 导出一个字符串&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@export var b:String&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 导出一个节点路径&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@export var c:NodePath&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 导出一个txt文件路径&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@export_global_file(&amp;quot;*.txt&amp;quot;) var d: String&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 导出一个资源文件路径&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@export var e:Resource&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;# 导出一个数字&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@export var a = 1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 导出一个字符串&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@export var b:String&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 导出一个节点路径&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@export var c:NodePath&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 导出一个txt文件路径&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@export_global_file(&amp;quot;*.txt&amp;quot;) var d: String&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 导出一个资源文件路径&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@export var e:Resource&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 在Godot编辑器中按住Ctrl单击@export即可查看更多&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;常量和静态方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#常量和静态方法&#34;&gt;#&lt;/a&gt; 🔷常量和静态方法&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -231,6 +231,7 @@
 &lt;p&gt;🔹静态方法：静态方法无法访问变量，只能访问常量&lt;/p&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;static func XXX&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
+&lt;hr&gt;
 &lt;h1 id=&#34;类和对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#类和对象&#34;&gt;#&lt;/a&gt; 🔵类和对象&lt;/h1&gt;
 &lt;h2 id=&#34;类class&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#类class&#34;&gt;#&lt;/a&gt; 🔷类 (class)&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -269,6 +270,7 @@
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;var NewObject = Object1.new(&amp;quot;Kanano&amp;quot;,172,110,114514) # 新建新对象NewObject，对象类别为Obecjt1并为各属性赋值&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 调用对象下的各个方法&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;NewObject.Action1()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;NewObject.Action2()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;NewObject.Output()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;最后输出结果为：&lt;img src=&#34;https://pic.imgdb.cn/item/63bd6897be43e0d30e177c56.jpg&#34; alt=&#34;输出结果&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;hr&gt;
 &lt;h1 id=&#34;语句&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语句&#34;&gt;#&lt;/a&gt; 🔵语句&lt;/h1&gt;
 &lt;h2 id=&#34;条件语句&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#条件语句&#34;&gt;#&lt;/a&gt; 🔷条件语句&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -308,6 +310,7 @@
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;for ContinueTest in range(5):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	if (ContinueTest == 3):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;		continue&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	print(ContinueTest)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;输出结果为：&lt;img src=&#34;https://pic.imgdb.cn/item/63bd4e2fbe43e0d30edb4a6b.jpg&#34; alt=&#34;输出结果&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;hr&gt;
 </content>
         <category term="Godot" />
         <category term="笔记" />
@@ -317,7 +320,7 @@
         <id>http://example.com/2023/01/06/%E3%80%90Godot%E3%80%912%E3%80%81%E8%8A%82%E7%82%B9/</id>
         <title>【Godot】2、节点</title>
         <link rel="alternate" href="http://example.com/2023/01/06/%E3%80%90Godot%E3%80%912%E3%80%81%E8%8A%82%E7%82%B9/"/>
-        <content type="html">&lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;文章会持续更新，最近更新时间为：2023/01/07&lt;/p&gt;
+        <content type="html">&lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;文章会持续更新，最近更新时间为：2023/01/10&lt;/p&gt;
 &lt;/div&gt;
 &lt;h1 id=&#34;什么是节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#什么是节点&#34;&gt;#&lt;/a&gt; 🔵什么是节点&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -368,6 +371,8 @@
 &lt;p&gt;🔹要自定义节点，先创建一个脚本，输入：&lt;/p&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;extends 要继承的父节点&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Class_name 节点名字 &amp;quot;节点图标路径&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;#自定义节点的属性面板内容&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;export var……&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;#在4.0后应改为&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@export var……&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;通过脚本操作节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#通过脚本操作节点&#34;&gt;#&lt;/a&gt; 🔵通过脚本操作节点&lt;/h1&gt;
 </content>
         <category term="Godot" />
         <category term="笔记" />
