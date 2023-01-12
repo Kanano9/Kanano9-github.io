@@ -17,7 +17,7 @@
             <category>Godot</category>
             <category>笔记</category>
             <pubDate>Sat, 07 Jan 2023 12:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;文章会持续更新，最近更新时间为：2023/01/10&lt;/p&gt;
+            <description><![CDATA[ &lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;文章会持续更新，最近更新时间为：2023/01/12&lt;/p&gt;
 &lt;/div&gt;
 &lt;h1 id=&#34;gds的数据类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#gds的数据类型&#34;&gt;#&lt;/a&gt; 🔵GDS 的数据类型&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -196,7 +196,7 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;变量的导出可以做个视频&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量的导出可以做个视频&#34;&gt;#&lt;/a&gt; 🔷变量的导出（可以做个视频）&lt;/h2&gt;
+&lt;h2 id=&#34;变量的导出&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量的导出&#34;&gt;#&lt;/a&gt; 🔷变量的导出&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;🔹将变量导出， 可以让我们直接在编辑器外部更改变量而不用编辑脚本&lt;/p&gt;
 &lt;p&gt;🔹导出变量的语法为：（4.0 语法）&lt;/p&gt;
@@ -317,6 +317,44 @@
 &lt;p&gt;输出结果为：&lt;img src=&#34;https://pic.imgdb.cn/item/63bd4e2fbe43e0d30edb4a6b.jpg&#34; alt=&#34;输出结果&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
+&lt;h1 id=&#34;process和physics_process&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#process和physics_process&#34;&gt;#&lt;/a&gt; 🔵process 和 physics_process&lt;/h1&gt;
+&lt;p&gt;🔷&lt;em&gt;Godot 中的_process 相当于 Unity 中的 Update；_physice_process 相当于 FixedUpdate&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;_processdelta渲染帧&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#_processdelta渲染帧&#34;&gt;#&lt;/a&gt; 🔷_process (delta)：渲染帧&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹Godot 在渲染每一帧画面前，都会执行一遍该方法内的代码&lt;/p&gt;
+&lt;p&gt;🔹该方法适用于模拟一些真实的、实时的情况，它可以最快的将变化反应到屏幕上，也是我们用的最多的一个方法&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;_physics_processdelta物理帧&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#_physics_processdelta物理帧&#34;&gt;#&lt;/a&gt; 🔷_physics_process (delta)：物理帧&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹Godot 的物理模拟是单独进行的，每次进行物理模拟的时候，没进行一次计算就是进行了一次物理帧，在物理帧之前会执行一次方法中的代码，因此&lt;mark&gt;它的执行间隔是固定的&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;🔹该方法常用于处理物理模拟方面的逻辑&lt;/p&gt;
+&lt;p&gt;🔹由于执行间隔固定的特性，可以用于在不使用 Timer 节点的情况下自定义计时器&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;信号signal&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#信号signal&#34;&gt;#&lt;/a&gt; 🔵信号 signal&lt;/h1&gt;
+&lt;p&gt;🔷&lt;em&gt;Godot 引擎官方建议在游戏开发中更多的使用信号来完成模块或功能间的通信&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;使用信号的方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用信号的方法&#34;&gt;#&lt;/a&gt; 🔷使用信号的方法&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;4.0 写法和 3.x 不同，下文会以 4.0 为标准&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;🔹方法 1：使用编辑器外部链接&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;选中需要发射信号的节点（例：Button 节点）&lt;/li&gt;
+&lt;li&gt;在右侧面板中找到 “节点” 面板，双击选择链接的信号（例：“pressed”）&lt;/li&gt;
+&lt;li&gt;在弹出窗口中选择需要链接的节点，在下方输入需要链接的方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔹方法 2：使用代码链接&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;# 写法1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$发射信号的节点.connect(&amp;quot;需要链接的信号&amp;quot;,Callable(链接的节点,&amp;quot;链接的方法&amp;quot;))&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 例：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$Button2.connect(&amp;quot;pressed&amp;quot;,Callable(self,&amp;quot;Button2&amp;quot;))&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 写法2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$发射信号的节点.需要链接的信号.connect(Callable(链接的节点,&amp;quot;链接的方法&amp;quot;))&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 例：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$Button2.pressed.connect(Callable(self,&amp;quot;Button3&amp;quot;))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;🔹&lt;strong&gt;更推荐使用代码进行链接，这样子链接更自由&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;40的自定义信号&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#40的自定义信号&#34;&gt;#&lt;/a&gt; 🔷4.0 的自定义信号&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹首先需要在发射信号的节点内声明发射的信号名&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;# 声明自定义信号&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;signal 信号名&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;🔹接着发射信号，如果没有声明信号的话会报错&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;# 触发信号的可以是方法，也可以是if判定触发&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;emit_signal(&amp;quot;信号名&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;🔹之后便可以用上面的方法链接信号&lt;/p&gt;
+&lt;/blockquote&gt;
  ]]></description>
         </item>
         <item>
@@ -326,7 +364,7 @@
             <category>Godot</category>
             <category>笔记</category>
             <pubDate>Fri, 06 Jan 2023 20:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;文章会持续更新，最近更新时间为：2023/01/10&lt;/p&gt;
+            <description><![CDATA[ &lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;文章会持续更新，最近更新时间为：2023/01/12&lt;/p&gt;
 &lt;/div&gt;
 &lt;h1 id=&#34;什么是节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#什么是节点&#34;&gt;#&lt;/a&gt; 🔵什么是节点&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -371,14 +409,36 @@
 &lt;p&gt;🔹&lt;strong&gt;Ordering&lt;/strong&gt; 下的&lt;strong&gt; Z Index&lt;/strong&gt;：相当于 3 维空间的 Z 轴便宜，也可以理解为数值越大渲染顺序越靠后&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;自定义节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#自定义节点&#34;&gt;#&lt;/a&gt; 🔷自定义节点&lt;/h1&gt;
+&lt;h1 id=&#34;自定义节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#自定义节点&#34;&gt;#&lt;/a&gt; 🔵自定义节点&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;🔹当现有节点无法满足需要时有两种解决方法：自定义节点、自定义脚本，但&lt;mark&gt;不管是哪种方法，核心都是脚本&lt;/mark&gt;&lt;/p&gt;
 &lt;p&gt;🔹要自定义节点，先创建一个脚本，输入：&lt;/p&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;extends 要继承的父节点&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Class_name 节点名字 &amp;quot;节点图标路径&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;#自定义节点的属性面板内容&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;export var……&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;#在4.0后应改为&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@export var……&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
+&lt;h1 id=&#34;owner和parent&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#owner和parent&#34;&gt;#&lt;/a&gt; 🔵Owner 和 Parent&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔷&lt;strong&gt;parent&lt;/strong&gt;：该节点的上一级节点&lt;/p&gt;
+&lt;p&gt;🔷&lt;strong&gt;owner&lt;/strong&gt;：该节点所在场景的最上级节点，如果该节点本身就是最上级，则结果为 &amp;quot;null&amp;quot;&lt;/p&gt;
+&lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;要获取 owner，只需要直接使用 owner 即可；例：var Owner = owner&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;动态创建的节点的 owner 为 null&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
 &lt;h1 id=&#34;通过脚本操作节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#通过脚本操作节点&#34;&gt;#&lt;/a&gt; 🔵通过脚本操作节点&lt;/h1&gt;
+&lt;h2 id=&#34;节点的获取&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#节点的获取&#34;&gt;#&lt;/a&gt; 🔷节点的获取&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;# 获取当前节点&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;var xxx = $&amp;quot;.&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;var xxx = self&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 获取父节点&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;var xxx = $&amp;quot;../&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;var xxx = get_parent() # 只能获取自己的上一级父节点&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 获取子节点&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;var xxx = $子节点名&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;var xxx = get_node(&amp;quot;节点名&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 根节点查找发：会返回在节点树里从上到下找到的第一个节点&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;var xxx = get_tree().root.find_node(&amp;quot;节点名&amp;quot;,true,false)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 如果需要在方法外获取节点，需要在变量前加@onready&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;@onready var xxx = $...&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;get_node () 中，如果要获取的节点是脚本挂载节点的子节点，直接填写 &amp;quot;子节点的名称&amp;quot;，或者 &amp;quot;子节点 / 子节点&amp;quot;…… 如果不是，则可以填写 &amp;quot;…/ 节点 / 节点 /……“或者&amp;quot;root/……”（这类似 linux 中的文件路径）&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;使用脚本添加并修改节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用脚本添加并修改节点&#34;&gt;#&lt;/a&gt; 🔷使用脚本添加并修改节点&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹在脚本中可以用类似创建对象的方式创建节点，并通过”add_child ()“添加进场景中&lt;/p&gt;
+&lt;p&gt;🔹要更改节点中需要调用资源的属性（如贴图）时，需要先载入贴图再赋值&lt;/p&gt;
+&lt;p&gt;🔹示例代码：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;func _ready():&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 新建一个Sprite2D类型的新节点&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 这里的Mynode1不是节点的名字，而是一个变量名，是它的“识别码”&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	var Mynode1 = Sprite2D.new()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 添加进场景中&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	add_child(Mynode1) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 给节点重命名&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	Mynode1.name = &amp;quot;Mynode1&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 加载节点贴图，同样的“Texture_Mynode1”也是这张贴图在这个方法中的识别码&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	var Texture_Mynode1 = preload(&amp;quot;res://icon.svg&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 更改贴图&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	Mynode1.texture = Texture_Mynode1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 更改位置&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	Mynode1.position.x = 200&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	Mynode1.position.y = 200 &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;func _process(delta):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 因为“Mynode1”是在“_ready&amp;quot;方法内声明的，无法在该方法访问，故需要重新声明并关联&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	var Mynode1 = $Mynode1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 使用rotate函数进行旋转&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	Mynode1.rotate(0.1)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/blockquote&gt;
  ]]></description>
         </item>
         <item>
