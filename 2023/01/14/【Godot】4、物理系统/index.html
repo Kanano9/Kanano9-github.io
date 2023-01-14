@@ -1,0 +1,186 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>【Godot】4、物理系统 | 九奏Kanano</title><meta name="author" content="九奏Kanano"><meta name="copyright" content="九奏Kanano"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="rgba(233, 243, 255, 1)"><meta name="description" content="# 🔵Godot 中的物理系统  🔹用一句话总结物理系统，就是模拟真实世界的碰撞 🔹Godot 的物理系统提供了组件化工作流程，目前有工体、碰撞组件以及触发和碰撞事件   # 🔵刚体  🔹刚体是组成物理世界的基本对象，可以理解为一个不能看到（绘制）也不能摸到（碰撞）的带有属性的物体  # 🔷Area2D 节点  🔹Area2D 节点是一块可以检测物体碰撞的区域，但自身不会做出任何动作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Godot】4、物理系统">
+<meta property="og:url" content="http://example.com/2023/01/14/%E3%80%90Godot%E3%80%914%E3%80%81%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="九奏Kanano">
+<meta property="og:description" content="# 🔵Godot 中的物理系统  🔹用一句话总结物理系统，就是模拟真实世界的碰撞 🔹Godot 的物理系统提供了组件化工作流程，目前有工体、碰撞组件以及触发和碰撞事件   # 🔵刚体  🔹刚体是组成物理世界的基本对象，可以理解为一个不能看到（绘制）也不能摸到（碰撞）的带有属性的物体  # 🔷Area2D 节点  🔹Area2D 节点是一块可以检测物体碰撞的区域，但自身不会做出任何动作">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.imgdb.cn/item/63b7dcb2be43e0d30e72deeb.jpg">
+<meta property="article:published_time" content="2023-01-14T01:48:00.000Z">
+<meta property="article:modified_time" content="2023-01-14T03:38:18.506Z">
+<meta property="article:author" content="九奏Kanano">
+<meta property="article:tag" content="Godot">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/63b7dcb2be43e0d30e72deeb.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/01/14/%E3%80%90Godot%E3%80%914%E3%80%81%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【Godot】4、物理系统',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-14 11:38:18'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'rgba(233, 243, 255, 1)')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 网页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">九奏Kanano</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 网页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">【Godot】4、物理系统</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-14T01:48:00.000Z" title="发表于 2023-01-14 09:48:00">2023-01-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-14T03:38:18.506Z" title="更新于 2023-01-14 11:38:18">2023-01-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Godot%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">Godot学习日志</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【Godot】4、物理系统"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="godot中的物理系统"><a class="markdownIt-Anchor" href="#godot中的物理系统">#</a> 🔵Godot 中的物理系统</h1>
+<blockquote>
+<p>🔹用一句话总结物理系统，就是模拟真实世界的碰撞</p>
+<p>🔹Godot 的物理系统提供了组件化工作流程，目前有工体、碰撞组件以及触发和碰撞事件</p>
+</blockquote>
+<hr>
+<h1 id="刚体"><a class="markdownIt-Anchor" href="#刚体">#</a> 🔵刚体</h1>
+<blockquote>
+<p>🔹刚体是组成物理世界的基本对象，可以理解为一个不能看到（绘制）也不能摸到（碰撞）的带有属性的物体</p>
+</blockquote>
+<h2 id="area2d节点"><a class="markdownIt-Anchor" href="#area2d节点">#</a> 🔷Area2D 节点</h2>
+<blockquote>
+<p>🔹Area2D 节点是一块可以检测物体碰撞的区域，但自身不会做出任何动作</p>
+</blockquote>
+<h2 id="rigibody2d节点"><a class="markdownIt-Anchor" href="#rigibody2d节点">#</a> 🔷RigiBody2D 节点</h2>
+<blockquote>
+<p>🔹RigiBody2D 是动态刚体，有质量，可以设置速度，会受到重力影响</p>
+<p>🔹RigiBody2D 必须得拥有一个形状，这需要 Collision2D 节点或者 CollisionPolygon2D（多边形）节点</p>
+<p>🔹RigiBody2D 有如下常用属性：</p>
+<ul>
+<li>
+<h2 id="mode刚体类型"><a class="markdownIt-Anchor" href="#mode刚体类型">#</a> <strong>mode</strong>：刚体类型：</h2>
+</li>
+<li><strong>mass</strong>：刚体质量</li>
+<li><strong>weight</strong>：刚体加速度</li>
+<li><strong>linear - velocity</strong>：移动速度</li>
+<li><strong>angular - velocity</strong>：旋转速度</li>
+<li><strong>applied - forces</strong>：施加的力</li>
+<li><strong>torque</strong>：扭矩</li>
+<li><strong>damp</strong>：衰减系数，当数值为正数时候速度随时间流逝变慢，反之加快，当数值为 0 时物体呈匀速运动</li>
+</ul>
+</blockquote>
+<h2 id="characterbody节点"><a class="markdownIt-Anchor" href="#characterbody节点">#</a> 🔷CharacterBody 节点</h2>
+<blockquote>
+<p>🔹CharacterBody 是运动刚体，没有质量，不受重力影响，可以设置速度来进行移动</p>
+</blockquote>
+<h2 id="staticbody节点"><a class="markdownIt-Anchor" href="#staticbody节点">#</a> 🔷StaticBody 节点</h2>
+<blockquote>
+<p>🔹Staic 是静态刚体，没有质量和速度，但是可以设置他的位置进行移动</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">九奏Kanano</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/01/14/%E3%80%90Godot%E3%80%914%E3%80%81%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/">http://example.com/2023/01/14/%E3%80%90Godot%E3%80%914%E3%80%81%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">九奏Kanano</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Godot/">Godot</a><a class="post-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></div><div class="post_share"><div class="social-share" data-image="https://pic.imgdb.cn/item/63b7dcb2be43e0d30e72deeb.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/01/07/%E3%80%90Godot%E3%80%913%E3%80%81%E8%84%9A%E6%9C%AC/"><img class="next-cover" src="https://pic.imgdb.cn/item/63b91959be43e0d30eb85f36.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【Godot】3、脚本</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/01/06/%E3%80%90Godot%E3%80%911%E3%80%81%E8%AE%A4%E8%AF%86Godot/" title="【Godot】1、认识Godot"><img class="cover" src="https://pic.imgdb.cn/item/63b7dcb2be43e0d30e72deeb.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-06</div><div class="title">【Godot】1、认识Godot</div></div></a></div><div><a href="/2023/01/06/%E3%80%90Godot%E3%80%91%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%A4%87%E5%BF%98/" title="【Godot】一些小技巧的备忘"><img class="cover" src="https://pic.imgdb.cn/item/63b7f342be43e0d30eaa081a.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-06</div><div class="title">【Godot】一些小技巧的备忘</div></div></a></div><div><a href="/2023/01/06/%E3%80%90Godot%E3%80%912%E3%80%81%E8%8A%82%E7%82%B9/" title="【Godot】2、节点"><img class="cover" src="https://pic.imgdb.cn/item/63b828c3be43e0d30e3f432a.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-06</div><div class="title">【Godot】2、节点</div></div></a></div><div><a href="/2023/01/07/%E3%80%90Godot%E3%80%913%E3%80%81%E8%84%9A%E6%9C%AC/" title="【Godot】3、脚本"><img class="cover" src="https://pic.imgdb.cn/item/63b91959be43e0d30eb85f36.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-07</div><div class="title">【Godot】3、脚本</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">九奏Kanano</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#godot%E4%B8%AD%E7%9A%84%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.</span> <span class="toc-text"> 🔵Godot 中的物理系统</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9A%E4%BD%93"><span class="toc-number">2.</span> <span class="toc-text"> 🔵刚体</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#area2d%E8%8A%82%E7%82%B9"><span class="toc-number">2.1.</span> <span class="toc-text"> 🔷Area2D 节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rigibody2d%E8%8A%82%E7%82%B9"><span class="toc-number">2.2.</span> <span class="toc-text"> 🔷RigiBody2D 节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mode%E5%88%9A%E4%BD%93%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.3.</span> <span class="toc-text"> mode：刚体类型：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#characterbody%E8%8A%82%E7%82%B9"><span class="toc-number">2.4.</span> <span class="toc-text"> 🔷CharacterBody 节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#staticbody%E8%8A%82%E7%82%B9"><span class="toc-number">2.5.</span> <span class="toc-text"> 🔷StaticBody 节点</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/01/14/%E3%80%90Godot%E3%80%914%E3%80%81%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" title="【Godot】4、物理系统"><img src="https://pic.imgdb.cn/item/63b7dcb2be43e0d30e72deeb.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Godot】4、物理系统"/></a><div class="content"><a class="title" href="/2023/01/14/%E3%80%90Godot%E3%80%914%E3%80%81%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" title="【Godot】4、物理系统">【Godot】4、物理系统</a><time datetime="2023-01-14T01:48:00.000Z" title="发表于 2023-01-14 09:48:00">2023-01-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/07/%E3%80%90Godot%E3%80%913%E3%80%81%E8%84%9A%E6%9C%AC/" title="【Godot】3、脚本"><img src="https://pic.imgdb.cn/item/63b91959be43e0d30eb85f36.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Godot】3、脚本"/></a><div class="content"><a class="title" href="/2023/01/07/%E3%80%90Godot%E3%80%913%E3%80%81%E8%84%9A%E6%9C%AC/" title="【Godot】3、脚本">【Godot】3、脚本</a><time datetime="2023-01-07T04:00:00.000Z" title="发表于 2023-01-07 12:00:00">2023-01-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/06/%E3%80%90Godot%E3%80%912%E3%80%81%E8%8A%82%E7%82%B9/" title="【Godot】2、节点"><img src="https://pic.imgdb.cn/item/63b828c3be43e0d30e3f432a.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Godot】2、节点"/></a><div class="content"><a class="title" href="/2023/01/06/%E3%80%90Godot%E3%80%912%E3%80%81%E8%8A%82%E7%82%B9/" title="【Godot】2、节点">【Godot】2、节点</a><time datetime="2023-01-06T12:00:00.000Z" title="发表于 2023-01-06 20:00:00">2023-01-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/06/%E3%80%90Godot%E3%80%911%E3%80%81%E8%AE%A4%E8%AF%86Godot/" title="【Godot】1、认识Godot"><img src="https://pic.imgdb.cn/item/63b7dcb2be43e0d30e72deeb.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Godot】1、认识Godot"/></a><div class="content"><a class="title" href="/2023/01/06/%E3%80%90Godot%E3%80%911%E3%80%81%E8%AE%A4%E8%AF%86Godot/" title="【Godot】1、认识Godot">【Godot】1、认识Godot</a><time datetime="2023-01-06T04:00:00.000Z" title="发表于 2023-01-06 12:00:00">2023-01-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/06/%E3%80%90Godot%E3%80%91%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%A4%87%E5%BF%98/" title="【Godot】一些小技巧的备忘"><img src="https://pic.imgdb.cn/item/63b7f342be43e0d30eaa081a.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Godot】一些小技巧的备忘"/></a><div class="content"><a class="title" href="/2023/01/06/%E3%80%90Godot%E3%80%91%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%A4%87%E5%BF%98/" title="【Godot】一些小技巧的备忘">【Godot】一些小技巧的备忘</a><time datetime="2023-01-05T16:00:00.000Z" title="发表于 2023-01-06 00:00:00">2023-01-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By 九奏Kanano</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

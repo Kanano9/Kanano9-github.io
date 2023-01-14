@@ -5,11 +5,60 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sat, 07 Jan 2023 12:00:00 +0800</pubDate>
-        <lastBuildDate>Sat, 07 Jan 2023 12:00:00 +0800</lastBuildDate>
+        <pubDate>Sat, 14 Jan 2023 09:48:00 +0800</pubDate>
+        <lastBuildDate>Sat, 14 Jan 2023 09:48:00 +0800</lastBuildDate>
         <category>杂项</category>
         <category>Godot</category>
         <category>笔记</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/01/14/%E3%80%90Godot%E3%80%914%E3%80%81%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/</guid>
+            <title>【Godot】4、物理系统</title>
+            <link>http://example.com/2023/01/14/%E3%80%90Godot%E3%80%914%E3%80%81%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/</link>
+            <category>Godot</category>
+            <category>笔记</category>
+            <pubDate>Sat, 14 Jan 2023 09:48:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;godot中的物理系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#godot中的物理系统&#34;&gt;#&lt;/a&gt; 🔵Godot 中的物理系统&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹用一句话总结物理系统，就是模拟真实世界的碰撞&lt;/p&gt;
+&lt;p&gt;🔹Godot 的物理系统提供了组件化工作流程，目前有工体、碰撞组件以及触发和碰撞事件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;刚体&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#刚体&#34;&gt;#&lt;/a&gt; 🔵刚体&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹刚体是组成物理世界的基本对象，可以理解为一个不能看到（绘制）也不能摸到（碰撞）的带有属性的物体&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;area2d节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#area2d节点&#34;&gt;#&lt;/a&gt; 🔷Area2D 节点&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹Area2D 节点是一块可以检测物体碰撞的区域，但自身不会做出任何动作&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;rigibody2d节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#rigibody2d节点&#34;&gt;#&lt;/a&gt; 🔷RigiBody2D 节点&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹RigiBody2D 是动态刚体，有质量，可以设置速度，会受到重力影响&lt;/p&gt;
+&lt;p&gt;🔹RigiBody2D 必须得拥有一个形状，这需要 Collision2D 节点或者 CollisionPolygon2D（多边形）节点&lt;/p&gt;
+&lt;p&gt;🔹RigiBody2D 有如下常用属性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h2 id=&#34;mode刚体类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#mode刚体类型&#34;&gt;#&lt;/a&gt; &lt;strong&gt;mode&lt;/strong&gt;：刚体类型：&lt;/h2&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mass&lt;/strong&gt;：刚体质量&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;weight&lt;/strong&gt;：刚体加速度&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;linear - velocity&lt;/strong&gt;：移动速度&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;angular - velocity&lt;/strong&gt;：旋转速度&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;applied - forces&lt;/strong&gt;：施加的力&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;torque&lt;/strong&gt;：扭矩&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;damp&lt;/strong&gt;：衰减系数，当数值为正数时候速度随时间流逝变慢，反之加快，当数值为 0 时物体呈匀速运动&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;characterbody节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#characterbody节点&#34;&gt;#&lt;/a&gt; 🔷CharacterBody 节点&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹CharacterBody 是运动刚体，没有质量，不受重力影响，可以设置速度来进行移动&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;staticbody节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#staticbody节点&#34;&gt;#&lt;/a&gt; 🔷StaticBody 节点&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹Staic 是静态刚体，没有质量和速度，但是可以设置他的位置进行移动&lt;/p&gt;
+&lt;/blockquote&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/01/07/%E3%80%90Godot%E3%80%913%E3%80%81%E8%84%9A%E6%9C%AC/</guid>
             <title>【Godot】3、脚本</title>
@@ -17,7 +66,7 @@
             <category>Godot</category>
             <category>笔记</category>
             <pubDate>Sat, 07 Jan 2023 12:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;文章会持续更新，最近更新时间为：2023/01/12&lt;/p&gt;
+            <description><![CDATA[ &lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;文章会持续更新，最近更新时间为：2023/01/14&lt;/p&gt;
 &lt;/div&gt;
 &lt;h1 id=&#34;gds的数据类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#gds的数据类型&#34;&gt;#&lt;/a&gt; 🔵GDS 的数据类型&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -375,7 +424,13 @@
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;extends Button&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;func _ready():、&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 输出第一条信息&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	print(&amp;quot;Button1ready触发1&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 挂起并拉起test()，等待对方执行完毕&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	await test()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 输出第二条信息&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	print(&amp;quot;Button1ready触发2&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;func test():&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 输出第一条信息&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	print(&amp;quot;test触发1&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 创建一个计时器并等待计时完毕&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 这里只是为了演唱两条信息间的时间间隔，让我们更好观察等待的过程&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	await get_tree().create_timer(1).timeout&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 输出信息提示该方法执行完毕&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	print(&amp;quot;test END&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;多线程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#多线程&#34;&gt;#&lt;/a&gt; 🔵多线程&lt;/h1&gt;
+&lt;h1 id=&#34;进程thread&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#进程thread&#34;&gt;#&lt;/a&gt; 🔵进程 Thread&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹创建一个执行单元，需要用到内置的 Thread 类&lt;/p&gt;
+&lt;p&gt;🔹在 4.0 中，Thread 的使用方法有所改变，由原来的四个参数改为了两个参数，分别为 Callable 和 Priority，如果需要调用的方法有需要接受数据的参数，可以用 Callable.bind 传递&lt;/p&gt;
+&lt;p&gt;🔹新建一个按钮，输入以下代码，观察输出：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;func _pressed():&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 新建一个进程Thread1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	var Thread1 = Thread.new()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 启动Thread1，进程执行方法&amp;quot;TheadTest&amp;quot;，传递一个int：99，优先级为0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	Thread1.start(Callable(self,&amp;quot;ThreadTest&amp;quot;).bind(99),0)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 输出进程ID&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	print(Thread1.get_id())&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 输出进程是否在运行&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	print(Thread1.is_alive())&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	print()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 等待进程结束&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	var finish = Thread1.wait_to_finish()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 输出返回值&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	print(finish)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 再次检查进程是否运行&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	print(Thread1.is_alive())&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 创建进程要执行的方法&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;func ThreadTest(abc):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 输出提示信息&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	print(&amp;quot;test steat&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 输出传递的参数&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	print(abc)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	# 返回一个参数&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	return 9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
  ]]></description>
         </item>
         <item>
@@ -385,7 +440,7 @@
             <category>Godot</category>
             <category>笔记</category>
             <pubDate>Fri, 06 Jan 2023 20:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;文章会持续更新，最近更新时间为：2023/01/12&lt;/p&gt;
+            <description><![CDATA[ &lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;文章会持续更新，最近更新时间为：2023/01/14&lt;/p&gt;
 &lt;/div&gt;
 &lt;h1 id=&#34;什么是节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#什么是节点&#34;&gt;#&lt;/a&gt; 🔵什么是节点&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -414,9 +469,23 @@
 &lt;p&gt;🔹Canvasltem 是直接继承自 Node 的一个节点，所有 2D 和 GUI 节点都继承于它&lt;/p&gt;
 &lt;p&gt;🔹Canvasltem 可以被绘制节点，可以设置可视化界面和材质的颜色&lt;/p&gt;
 &lt;p&gt;🔹通过设置 Show Behind Parent 可以改变最终渲染到屏幕上的画面顺序&lt;/p&gt;
-&lt;p&gt;🔹&lt;strong&gt;Texture&lt;/strong&gt;：贴图，附加到附体表面的贴图&lt;/p&gt;
-&lt;p&gt;🔹&lt;strong&gt;Material&lt;/strong&gt;：材质，实际上就是 shade&lt;/p&gt;
-&lt;p&gt;🔹&lt;strong&gt;Shader&lt;/strong&gt;：着色器，使用代码来渲染图形&lt;/p&gt;
+&lt;p&gt;🔹CanvasItem 主要拥有这些属性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Texture&lt;/strong&gt;：贴图，附加到附体表面的贴图&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Material&lt;/strong&gt;：材质，实际上就是 shade&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Shader&lt;/strong&gt;：着色器，使用代码来渲染图形&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔹在 CanvasItem 类中，常用的方法有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;hide ()：隐藏对象&lt;/li&gt;
+&lt;li&gt;show ()：显示对象&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;node2d&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#node2d&#34;&gt;#&lt;/a&gt; 🔷Node2D&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -428,6 +497,11 @@
 &lt;li&gt;&lt;strong&gt;Scale&lt;/strong&gt;：缩放&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;🔹&lt;strong&gt;Ordering&lt;/strong&gt; 下的&lt;strong&gt; Z Index&lt;/strong&gt;：相当于 3 维空间的 Z 轴便宜，也可以理解为数值越大渲染顺序越靠后&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;sprite&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#sprite&#34;&gt;#&lt;/a&gt; 🔷Sprite&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹Sprite 节点继承自 Node2D&lt;/p&gt;
+&lt;p&gt;🔹最直接的作用就是显示图片&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h1 id=&#34;自定义节点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#自定义节点&#34;&gt;#&lt;/a&gt; 🔵自定义节点&lt;/h1&gt;
